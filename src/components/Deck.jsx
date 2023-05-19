@@ -1,11 +1,11 @@
 import QuestionWrapper from "./QuestionWrapper";
 
-export default function Deck() {
+export default function Deck(props) {
+  const {deck, finishedQuestions, setQuestsStatus} = props;
   
     return (
       <>
-        Deck
-        <QuestionWrapper />
+        {deck.map(q => <QuestionWrapper question={q} setQuestsStatus={setQuestsStatus} />)}
       </>
     )
   }
