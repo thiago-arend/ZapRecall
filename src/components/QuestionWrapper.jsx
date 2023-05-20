@@ -45,8 +45,9 @@ export default function QuestionWrapper(props) {
 
   return (
     <>
-      <SCQuestWrapper status={wrapperStatus} 
-        display={(!displayAnswer && !displayQuestion) ? "flex" : "none"} >
+      <SCQuestWrapper 
+         status={wrapperStatus} 
+         display={(!displayAnswer && !displayQuestion) ? "flex" : "none"} >
         <span>Pergunta {(number + 1).toString()}</span>
         <input type="image" disabled={(wrapperStatus !== 0) ? true : false}
           onClick={() => resolveDisplayQuestion()} 
@@ -73,7 +74,6 @@ export default function QuestionWrapper(props) {
 }
 
 const SCQuestWrapper = styled.div`
-
   margin-bottom: 20px;
   width: 100%;
   height: 65px;
@@ -85,10 +85,6 @@ const SCQuestWrapper = styled.div`
   display: ${props => props.display};
   justify-content: space-between;
   align-items: center;
-
-  &:last-child {
-    margin-bottom: 140px;
-  }
 
   span {
     font-family: 'Recursive';

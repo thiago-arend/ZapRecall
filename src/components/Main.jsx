@@ -27,7 +27,7 @@ export default function Main() {
 
       <SCEspacamentoBase />
 
-      <SCFooter>
+      <SCFooter qtdConcluidas={finishedQuestsStatus.length}>
         <FinishedQuestions total={DECK.length} finishedQuestsStatus={finishedQuestsStatus} />
       </SCFooter>
     </>
@@ -72,12 +72,13 @@ const SCDeck = styled.div`
     top: 180px;
     overflow: scroll;
     overflow: hidden;
+    height: calc(100vh * 2.3);
 `;
 
 const SCFooter = styled.div`
     position: fixed;
     width: 100%;
-    height: 70px;
+    height: ${props => (props.qtdConcluidas !== DECK.length) ? "70px" : "171px"};
     bottom: 0;
     z-index: 1;
     background-color: #FFF;

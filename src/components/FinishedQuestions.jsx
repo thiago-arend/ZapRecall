@@ -33,3 +33,7 @@ const SCContagemConcluidos = styled.div`
     gap: 5px;
   }
 `;
+
+const SCMensagemConcluidos = styled.div`
+    
+`;
