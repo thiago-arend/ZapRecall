@@ -14,30 +14,48 @@ export default function Main() {
 
   return (
     <>
-      <SCLogoDeck>
-        <SCLogo>
+      <SCHeader>
+        <div>
           <img src={logoZap} alt="logo ZapRecall" />
           <h1>ZapRecall</h1>
-        </SCLogo>
-        <SCDeck>
-          <Deck deck={DECK}
-            finishedQuestions={finishedQuestions}
-            setQuestsStatus={setQuestsStatus} />
-        </SCDeck>
-      </SCLogoDeck>
-      <FinishedQuestions finishedQuestions={finishedQuestions} />
+        </div>
+      </SCHeader>
+
+      <SCEspacamentoTopo />
+
+      <SCDeck>
+        <Deck deck={DECK}
+          finishedQuestions={finishedQuestions}
+          setQuestsStatus={setQuestsStatus} />
+      </SCDeck>
+
+      <SCEspacamentoBase />
+
+      <SCFooter>
+        <FinishedQuestions finishedQuestions={finishedQuestions} />
+      </SCFooter>
     </>
   )
 }
 
-const SCLogo = styled.div`
+const SCHeader = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 110px;
+  z-index: 1;
+  background-color: #FB6B6B;
+
+  div {
+  position: fixed;
   width: 256px;
   height: 60px;
-  margin: 40px auto 60px;
+  top: 50px;
+  left: calc(50vw - 128px);
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
   img {
     height: 100%;
@@ -49,20 +67,46 @@ const SCLogo = styled.div`
     font-size: 36px;
     color: #FFF;
   }
-
-`;
-
-const SCLogoDeck = styled.div`
-  width: 300px;
-  height: calc(100vh - 70px);
-  position: fixed;
-  background-color: red;
-  top: 0;
-  left: calc(50vw - 150px);
 `;
 
 const SCDeck = styled.div`
-  background-color: blue;
+    position: relative;
+    width: 300px;
+    left: calc(50vw - 150px);
+    top: 180px;
+    overflow: scroll;
+    overflow: hidden;
+`;
+
+const SCFooter = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    bottom: 0;
+    z-index: 1;
+    background-color: #FFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+const SCEspacamentoTopo = styled.div`
+  position: fixed;
+  z-index: 1;
   width: 100%;
-  height: calc(100vh - 230px);
+  height: 50px;
+  background-color: #FB6B6B;
+  top: 110px;
+  left: 0;
+`;
+
+const SCEspacamentoBase = styled.div`
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  background-color: #FB6B6B;
+  bottom: 70px;
+  left: 0;
 `;
