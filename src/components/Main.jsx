@@ -28,7 +28,7 @@ export default function Main() {
       <SCEspacamentoBase />
 
       <SCFooter>
-        <FinishedQuestions finishedQuestsStatus={finishedQuestsStatus} />
+        <FinishedQuestions total={DECK.length} finishedQuestsStatus={finishedQuestsStatus} />
       </SCFooter>
     </>
   )
