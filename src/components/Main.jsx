@@ -72,7 +72,7 @@ const SCDeck = styled.div`
     top: 180px;
     overflow: scroll;
     overflow: hidden;
-    height: calc(100vh * 2.3);
+    height: calc(100vh * 2.5);
 `;
 
 const SCFooter = styled.div`
