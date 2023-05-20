@@ -6,11 +6,7 @@ import styled from "styled-components";
 import logoZap from "../assets/logo.png";
 
 export default function Main() {
-  const [finishedQuestions, setFinishedQuestions] = useState([]);
-
-  function setQuestsStatus() {
-
-  }
+  const [finishedQuestsStatus, setFinishedQuestsStatus] = useState([]);
 
   return (
     <>
@@ -25,14 +21,14 @@ export default function Main() {
 
       <SCDeck>
         <Deck deck={DECK}
-          finishedQuestions={finishedQuestions}
-          setQuestsStatus={setQuestsStatus} />
+          finishedQuestsStatus={finishedQuestsStatus}
+          setFinishedQuestsStatus={setFinishedQuestsStatus} />
       </SCDeck>
 
       <SCEspacamentoBase />
 
       <SCFooter>
-        <FinishedQuestions finishedQuestions={finishedQuestions} />
+        <FinishedQuestions finishedQuestsStatus={finishedQuestsStatus} />
       </SCFooter>
     </>
   )

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import QuestionWrapper from "./QuestionWrapper";
 
 export default function Deck(props) {
-  const { deck, finishedQuestions, setQuestsStatus } = props;
+  const { deck, finishedQuestsStatus, setFinishedQuestsStatus } = props;
 
   return (
     <>
@@ -10,7 +10,8 @@ export default function Deck(props) {
                             key={q.question}
                             number={i}
                             question={q}
-                            setQuestsStatus={setQuestsStatus}
+                            finishedQuestsStatus={finishedQuestsStatus}
+                            setFinishedQuestsStatus={setFinishedQuestsStatus}
                            />)}
     </>
   );
