@@ -46,7 +46,7 @@ const SCHeader = styled.div`
   width: 256px;
   height: 60px;
   top: 50px;
-  left: calc(50vw - 128px);
+  left: calc(50vw - 140px);
 
   display: flex;
   justify-content: space-between;
@@ -68,7 +68,7 @@ const SCHeader = styled.div`
 const SCDeck = styled.div`
     position: relative;
     width: 300px;
-    left: calc(50vw - 150px);
+    left: calc(50vw - 160px);
     top: 180px;
     overflow: scroll;
     overflow: hidden;

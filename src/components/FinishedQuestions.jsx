@@ -7,9 +7,11 @@ export default function FinishedQuestions(props) {
   return (
     <>
       <SCContagemConcluidos>
+        <div>
           <span>{finishedQuestsStatus.length}</span>
           /<span>{total}</span>
           <span> CONCLUÍDOS</span>
+        </div>
 
         <div>
           {finishedQuestsStatus.map((qw, i) => <AnswerImage key={i} status={qw[1]} />)}
@@ -25,6 +27,7 @@ const SCContagemConcluidos = styled.div`
   font-weight: 400;
   font-size: 18px;
   color: #333;
+  width: 100%;
 
   div {
     margin-top: 8px;
