@@ -39,7 +39,6 @@ export default function QuestionWrapper(props) {
       // mostra novamente questionWrapper
       setDisplayQuestion(false);
       setDisplayAnswer(false);
-      console.log('clicouuuuuuuuuu');
     }
   }
 

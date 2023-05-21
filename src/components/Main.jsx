@@ -85,7 +85,7 @@ const SCFooter = styled.div`
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: ${props => (props.qtdConcluidas !== DECK.length) ? "center" : "flex-start"};
 `;
 
 const SCEspacamentoTopo = styled.div`
