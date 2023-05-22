@@ -4,7 +4,7 @@ import partyImage from "../assets/party.png";
 import sadImage from "../assets/sad.png";
 
 export default function FinishedQuestions(props) {
-  const { finishedQuestsStatus, total } = props;
+  const { geraDataTest, finishedQuestsStatus, total } = props;
 
   function preparaMensagem() {
     const mensagemFinal = [];
@@ -25,7 +25,7 @@ export default function FinishedQuestions(props) {
 
   return (
     <div>
-      {(finishedQuestsStatus.length === total) && <SCMensagemConcluidos>
+      {(finishedQuestsStatus.length === total) && <SCMensagemConcluidos data-test="finish-text">
                                                     <div>
                                                       <img src={preparaMensagem()[0]} />
                                                       <span>{preparaMensagem()[1]}</span>
@@ -35,13 +35,13 @@ export default function FinishedQuestions(props) {
                                                     </div>
                                                   </SCMensagemConcluidos>}
       
-      <SCContagemConcluidos>
+      <SCContagemConcluidos data-test="footer">
         <div>
           <span>{finishedQuestsStatus.length}/{total} CONCLUÍDOS</span>
         </div>
 
         <div>
-          {finishedQuestsStatus.map((qw, i) => <AnswerImage key={i} status={qw[1]} />)}
+          {finishedQuestsStatus.map((qw, i) => <AnswerImage geraDataTest={geraDataTest} key={i} status={qw[1]} />)}
         </div>
       </SCContagemConcluidos>
     </div>

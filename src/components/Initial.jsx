@@ -11,7 +11,7 @@ export default function Initial(props) {
         <h1>ZapRecall</h1>
       </div>
 
-      <button onClick={() => setStart(true)} >Iniciar Recall!</button>
+      <button data-test="start-btn" onClick={() => setStart(true)} >Iniciar Recall!</button>
     </InitialDiv>
   )
 }

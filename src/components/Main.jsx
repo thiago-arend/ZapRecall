@@ -8,6 +8,13 @@ import logoZap from "../assets/logo.png";
 export default function Main() {
   const [finishedQuestsStatus, setFinishedQuestsStatus] = useState([]);
 
+  function geraDataTest(status) {
+    if (status === 0) return "play-btn";
+    if (status === 1) return "no-icon";
+    if (status === 2) return "partial-icon";
+    if (status == 3) return "zap-icon";
+  }
+
   return (
     <>
       <SCHeader>
@@ -21,6 +28,7 @@ export default function Main() {
 
       <SCDeck>
         <Deck deck={DECK}
+          geraDataTest={geraDataTest}
           finishedQuestsStatus={finishedQuestsStatus}
           setFinishedQuestsStatus={setFinishedQuestsStatus} />
       </SCDeck>
@@ -28,7 +36,7 @@ export default function Main() {
       <SCEspacamentoBase />
 
       <SCFooter qtdConcluidas={finishedQuestsStatus.length}>
-        <FinishedQuestions total={DECK.length} finishedQuestsStatus={finishedQuestsStatus} />
+        <FinishedQuestions geraDataTest={geraDataTest} total={DECK.length} finishedQuestsStatus={finishedQuestsStatus} />
       </SCFooter>
     </>
   )

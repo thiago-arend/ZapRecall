@@ -13,7 +13,7 @@ export default function QuestionWrapper(props) {
   const [wrapperStatus, setWrapperStatus] = useState(0);
 
   const { question, answer } = props.question;
-  const { number, finishedQuestsStatus, setFinishedQuestsStatus } = props;
+  const { geraDataTest, number, finishedQuestsStatus, setFinishedQuestsStatus } = props;
 
   function resolveDisplayQuestion() {
     if (!displayQuestion) {
@@ -45,27 +45,29 @@ export default function QuestionWrapper(props) {
   return (
     <>
       <SCQuestWrapper 
+         data-test="flashcard"
          status={wrapperStatus} 
          display={(!displayAnswer && !displayQuestion) ? "flex" : "none"} >
-        <span>Pergunta {(number + 1).toString()}</span>
-        <input type="image" disabled={(wrapperStatus !== 0) ? true : false}
+        <span data-test="flashcard-text">Pergunta {(number + 1).toString()}</span>
+        <input data-test={geraDataTest(wrapperStatus)} 
+          type="image" disabled={(wrapperStatus !== 0) ? true : false}
           onClick={() => resolveDisplayQuestion()} 
           src={imagensResposta[wrapperStatus]} />
       </SCQuestWrapper>
 
       <SCQuestion display={displayQuestion ? "flex" : "none"} >
-        <span>{question}</span>
+        <span data-test="flashcard-text">{question}</span>
         <div>
-          <img onClick={() => resolveDisplayAnswer()} src={setaVirar} />
+          <img data-test="turn-btn" onClick={() => resolveDisplayAnswer()} src={setaVirar} />
         </div>
       </SCQuestion>
 
       <SCAnswer display={displayAnswer ? "flex" : "none"}>
-        <span>{answer}</span>
+        <span data-test="flashcard-text">{answer}</span>
         <div>
-          <button onClick={() => resolveResponder(1)} >Não lembrei</button>
-          <button onClick={() => resolveResponder(2)} >Quase não lembrei</button>
-          <button onClick={() => resolveResponder(3)} >Zap!</button>
+          <button data-test="no-btn" onClick={() => resolveResponder(1)} >Não lembrei</button>
+          <button data-test="partial-btn" onClick={() => resolveResponder(2)} >Quase não lembrei</button>
+          <button data-test="zap-btn" onClick={() => resolveResponder(3)} >Zap!</button>
         </div>
       </SCAnswer>
     </>
