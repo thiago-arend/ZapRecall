@@ -37,7 +37,7 @@ export default function FinishedQuestions(props) {
             </div>
           </SCMensagemConcluidos> }
       
-      <SCContagemConcluidos data-test="footer">
+      <SCContagemConcluidos>
         <div>
           <span>{finishedQuestsStatus.length}/{total} CONCLUÍDOS</span>
         </div>
