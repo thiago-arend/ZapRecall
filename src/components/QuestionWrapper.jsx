@@ -116,7 +116,7 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
   height: 131px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  background-color: #FFF;
+  background-color: #FFFFD4;
   padding: 0 12px;
 
   display: ${props => props.display};
@@ -130,8 +130,6 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
     justify-content: flex-end;
   }
   img {
-    width: 30px;
-    height: 20px;
         &:hover {
             cursor: pointer;
         }
@@ -153,7 +151,7 @@ const SCAnswer = styled(SCNormalBlackRecursive)`
   height: 131px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
-  background-color: #FFF;
+  background-color: #FFFFD4;
   padding: 0 12px;
 
   display: ${props => props.display};
