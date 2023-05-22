@@ -36,7 +36,9 @@ export default function Main() {
       <SCEspacamentoBase />
 
       <SCFooter qtdConcluidas={finishedQuestsStatus.length}>
-        <FinishedQuestions geraDataTest={geraDataTest} total={DECK.length} finishedQuestsStatus={finishedQuestsStatus} />
+        <FinishedQuestions geraDataTest={geraDataTest} 
+          total={DECK.length}
+          finishedQuestsStatus={finishedQuestsStatus} />
       </SCFooter>
     </>
   )
@@ -48,7 +50,6 @@ const SCHeader = styled.div`
   height: 110px;
   z-index: 1;
   background-color: #FB6B6B;
-
   div {
   position: fixed;
   width: 256px;
@@ -60,12 +61,10 @@ const SCHeader = styled.div`
   justify-content: space-between;
   align-items: center;
 }
-
   img {
     height: 100%;
     width: 52px;
   }
-
   h1 {
     font-family: 'Recursive', sans-serif;
     font-size: 36px;
@@ -96,22 +95,19 @@ const SCFooter = styled.div`
     align-items: ${props => (props.qtdConcluidas !== DECK.length) ? "center" : "flex-start"};
 `;
 
-const SCEspacamentoTopo = styled.div`
+const SCEspacamento = styled.div`
   position: fixed;
   z-index: 1;
   width: 100%;
   height: 50px;
   background-color: #FB6B6B;
-  top: 110px;
   left: 0;
 `;
 
-const SCEspacamentoBase = styled.div`
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  height: 50px;
-  background-color: #FB6B6B;
+const SCEspacamentoTopo = styled(SCEspacamento)`
+  top: 110px;
+`;
+
+const SCEspacamentoBase = styled(SCEspacamento)`
   bottom: 70px;
-  left: 0;
 `;

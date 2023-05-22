@@ -10,7 +10,6 @@ export default function Initial(props) {
         <img src={logoZap} />
         <h1>ZapRecall</h1>
       </div>
-
       <button data-test="start-btn" onClick={() => setStart(true)} >Iniciar Recall!</button>
     </InitialDiv>
   )
@@ -27,18 +26,15 @@ const InitialDiv = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
-
     img {
       width: 136px;
       height: 161px;
     }
-
     h1 {
       font-family: 'Righteous';
       font-style: normal;
@@ -47,7 +43,6 @@ const InitialDiv = styled.div`
       color: #FFF;
     }
   }
-
   button {
       font-family: 'Recursive';
       font-style: normal;

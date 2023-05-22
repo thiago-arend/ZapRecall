@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import QuestionWrapper from "./QuestionWrapper";
 
 export default function Deck(props) {
