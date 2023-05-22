@@ -132,6 +132,12 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
   img {
     width: 30px;
     height: 20px;
+        &:hover {
+            cursor: pointer;
+        }
+        &:disabled {
+            cursor: default;
+        }
   }
   span {
     margin-top: 12px;
