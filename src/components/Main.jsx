@@ -35,7 +35,7 @@ export default function Main() {
 
       <SCEspacamentoBase />
 
-      <SCFooter data-test="footer" qtdConcluidas={finishedQuestsStatus.length}>
+      <SCFooter qtdConcluidas={finishedQuestsStatus.length}>
         <FinishedQuestions geraDataTest={geraDataTest} 
           total={DECK.length}
           finishedQuestsStatus={finishedQuestsStatus} />
