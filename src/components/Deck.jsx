@@ -5,7 +5,8 @@ export default function Deck(props) {
 
   return (
     <>
-      {deck.map((q, i) =>  <QuestionWrapper 
+      {deck.map((q, i) =>  <QuestionWrapper
+                            deck={deck} 
                             key={q.question}
                             geraDataTest={geraDataTest}
                             number={i}

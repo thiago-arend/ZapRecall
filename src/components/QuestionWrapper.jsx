@@ -15,7 +15,7 @@ export default function QuestionWrapper(props) {
   const [wrapperStatus, setWrapperStatus] = useState(0);
 
   const { question, answer } = props.question;
-  const { geraDataTest, number, finishedQuestsStatus, setFinishedQuestsStatus } = props;
+  const { deck, geraDataTest, number, finishedQuestsStatus, setFinishedQuestsStatus } = props;
 
   function resolveDisplayQuestion() {
     if (!displayQuestion) {
@@ -48,6 +48,8 @@ export default function QuestionWrapper(props) {
     <>
       <SCQuestWrapper
         data-test="flashcard"
+        qtdConcluidas={finishedQuestsStatus.length}
+        deck={deck}
         status={wrapperStatus}
         display={(!displayAnswer && !displayQuestion) ? "flex" : "none"} >
         <span data-test="flashcard-text">Pergunta {(number + 1).toString()}</span>
@@ -57,14 +59,20 @@ export default function QuestionWrapper(props) {
           src={imagensResposta[wrapperStatus]} />
       </SCQuestWrapper>
 
-      <SCQuestion display={displayQuestion ? "flex" : "none"} >
+      <SCQuestion 
+        display={displayQuestion ? "flex" : "none"}
+        qtdConcluidas={finishedQuestsStatus.length}
+        deck={deck} >
         <span data-test="flashcard-text">{question}</span>
         <div>
           <img data-test="turn-btn" onClick={() => resolveDisplayAnswer()} src={setaVirar} />
         </div>
       </SCQuestion>
 
-      <SCAnswer display={displayAnswer ? "flex" : "none"}>
+      <SCAnswer 
+        display={displayAnswer ? "flex" : "none"}
+        qtdConcluidas={finishedQuestsStatus.length}
+        deck={deck} >
         <span data-test="flashcard-text">{answer}</span>
         <div>
           <button data-test="no-btn" onClick={() => resolveResponder(1)} >Não lembrei</button>
@@ -86,7 +94,7 @@ const SCQuestWrapper = styled(SCNormalBlackRecursive)`
   padding: 0 12px;
 
   &:nth-last-child(3) {
-    margin-bottom: 90px;
+    margin-bottom: ${props => (props.qtdConcluidas !== props.deck.length) ? "90px" : "191px"};
   }
 
   display: ${props => props.display};
@@ -121,7 +129,7 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
   padding: 0 12px;
 
   &:nth-last-child(2) {
-    margin-bottom: 90px;
+    margin-bottom: ${props => (props.qtdConcluidas !== props.deck.length) ? "90px" : "191px"};
   }
 
   display: ${props => props.display};
@@ -160,7 +168,7 @@ const SCAnswer = styled(SCNormalBlackRecursive)`
   padding: 0 12px;
 
   &:last-child {
-    margin-bottom: 90px;
+    margin-bottom: ${props => (props.qtdConcluidas !== props.deck.length) ? "90px" : "191px"};
   }
 
   display: ${props => props.display};

@@ -83,7 +83,6 @@ const SCFooter = styled.div`
     bottom: 0;
     z-index: 1;
     background-color: #FFF;
-    height: 70px;
 
     display: flex;
     justify-content: center;
