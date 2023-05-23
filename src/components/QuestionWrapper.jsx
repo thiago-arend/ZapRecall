@@ -113,7 +113,7 @@ const SCQuestWrapper = styled(SCNormalBlackRecursive)`
 const SCQuestion = styled(SCNormalBlackRecursive)`
   margin-bottom: 20px;
   width: 100%;
-  height: 131px;
+  min-height: 131px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   background-color: #FFFFD4;
@@ -148,7 +148,7 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
 const SCAnswer = styled(SCNormalBlackRecursive)`
   margin-bottom: 20px;
   width: 100%;
-  height: 131px;
+  min-height: 131px;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   background-color: #FFFFD4;
