@@ -24,16 +24,12 @@ export default function Main() {
         </div>
       </SCHeader>
 
-      <SCEspacamentoTopo />
-
       <SCDeck>
         <Deck deck={DECK}
           geraDataTest={geraDataTest}
           finishedQuestsStatus={finishedQuestsStatus}
           setFinishedQuestsStatus={setFinishedQuestsStatus} />
       </SCDeck>
-
-      <SCEspacamentoBase />
 
       <SCFooter qtdConcluidas={finishedQuestsStatus.length}>
         <FinishedQuestions geraDataTest={geraDataTest} 
@@ -45,22 +41,25 @@ export default function Main() {
 }
 
 const SCHeader = styled.div`
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 110px;
   z-index: 1;
   background-color: #FB6B6B;
-  div {
-  position: fixed;
-  width: 256px;
-  height: 60px;
-  top: 50px;
-  left: calc(50vw - 140px);
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
+  div {
+    width: 256px;
+    height: 60px;
+    top: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   img {
     height: 100%;
     width: 52px;
@@ -73,17 +72,12 @@ const SCHeader = styled.div`
 `;
 
 const SCDeck = styled.div`
-    position: relative;
     width: 300px;
-    left: calc(50vw - 160px);
-    top: 180px;
-    overflow: scroll;
-    overflow: hidden;
-    height: calc(100vh * 2.5);
+    margin: 0 auto;
 `;
 
 const SCFooter = styled.div`
-    position: fixed;
+    position: sticky;
     width: 100%;
     height: ${props => (props.qtdConcluidas !== DECK.length) ? "70px" : "171px"};
     bottom: 0;
@@ -93,21 +87,4 @@ const SCFooter = styled.div`
     display: flex;
     justify-content: center;
     align-items: ${props => (props.qtdConcluidas !== DECK.length) ? "center" : "flex-start"};
-`;
-
-const SCEspacamento = styled.div`
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  height: 50px;
-  background-color: #FB6B6B;
-  left: 0;
-`;
-
-const SCEspacamentoTopo = styled(SCEspacamento)`
-  top: 110px;
-`;
-
-const SCEspacamentoBase = styled(SCEspacamento)`
-  bottom: 70px;
 `;
