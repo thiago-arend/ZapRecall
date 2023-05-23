@@ -85,6 +85,10 @@ const SCQuestWrapper = styled(SCNormalBlackRecursive)`
   background-color: #FFF;
   padding: 0 12px;
 
+  &:nth-last-child(3) {
+    margin-bottom: 90px;
+  }
+
   display: ${props => props.display};
   justify-content: space-between;
   align-items: center;
@@ -96,13 +100,10 @@ const SCQuestWrapper = styled(SCNormalBlackRecursive)`
       switch (props.status) {
         case 1:
           return "#FF3030";
-          break;
         case 2:
           return "#FF922E";
-          break;
         case 3:
           return "#2FBE34";
-          break;
         default:
           return "#333";
       }
@@ -118,6 +119,10 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
   border-radius: 5px;
   background-color: #FFFFD4;
   padding: 0 12px;
+
+  &:nth-last-child(2) {
+    margin-bottom: 90px;
+  }
 
   display: ${props => props.display};
   justify-content: space-between;
@@ -153,6 +158,10 @@ const SCAnswer = styled(SCNormalBlackRecursive)`
   border-radius: 5px;
   background-color: #FFFFD4;
   padding: 0 12px;
+
+  &:last-child {
+    margin-bottom: 90px;
+  }
 
   display: ${props => props.display};
   flex-direction: column;

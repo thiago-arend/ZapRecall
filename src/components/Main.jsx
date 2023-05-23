@@ -77,12 +77,13 @@ const SCDeck = styled.div`
 `;
 
 const SCFooter = styled.div`
-    position: sticky;
+    position: fixed;
     width: 100%;
     height: ${props => (props.qtdConcluidas !== DECK.length) ? "70px" : "171px"};
     bottom: 0;
     z-index: 1;
     background-color: #FFF;
+    height: 70px;
 
     display: flex;
     justify-content: center;
