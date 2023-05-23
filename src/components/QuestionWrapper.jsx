@@ -93,6 +93,10 @@ const SCQuestWrapper = styled(SCNormalBlackRecursive)`
   background-color: #FFF;
   padding: 0 12px;
 
+  &:nth-child(1) {
+    margin-top: 130px;
+  }
+
   &:nth-last-child(3) {
     margin-bottom: ${props => (props.qtdConcluidas !== props.deck.length) ? "90px" : "191px"};
   }
@@ -127,6 +131,10 @@ const SCQuestion = styled(SCNormalBlackRecursive)`
   border-radius: 5px;
   background-color: #FFFFD4;
   padding: 0 12px;
+
+  &:nth-child(2) {
+    margin-top: 130px;
+  }
 
   &:nth-last-child(2) {
     margin-bottom: ${props => (props.qtdConcluidas !== props.deck.length) ? "90px" : "191px"};
@@ -166,6 +174,10 @@ const SCAnswer = styled(SCNormalBlackRecursive)`
   border-radius: 5px;
   background-color: #FFFFD4;
   padding: 0 12px;
+
+  &:nth-child(3) {
+    margin-top: 130px;
+  }
 
   &:last-child {
     margin-bottom: ${props => (props.qtdConcluidas !== props.deck.length) ? "90px" : "191px"};
